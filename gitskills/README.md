@@ -12,9 +12,10 @@ Pro Git
 
 仅将 Git 中常用命令做一汇总，以便查询。
 
-Git 基本命令
+##Git 基本命令
 
-git config 
+**git config**
+
 安装完 Git 后，首先要进行基本的配置。
 
 # 用户信息设置
@@ -30,71 +31,102 @@ git config
 * ~$ git config --global alias.br branch
 * ~$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-git init 
+**git init**
+
 Git 仓库初始化。在工作区创建隐藏目录 .git，这是 Git 的版本库，其中重要的就是称为stage（或者叫index）的暂存区和当前分支。
 
-git add <file> 
+**git add <file>**
+
 将工作区文件修改提交至版本库的暂存区中，可以使用 . 或者 -A 参数。
 
-git commit 
+**git commit**
+
 将版本库的暂存区中所有内容提交至版本库的当前分支中，使用 -m 参数进行修改说明。
 
-git status 
+**git status**
+
 查看工作区状态。
 
-git diff 
+**git diff**
+
 查看修改内容，显示的格式是Unix通用的diff格式。
 
-git log
+#git log
 
-# 查看提交历史
+### 查看提交历史
 ~$ git log 
 # 查看合并情况
 ~$ git log --graph 
 ~$ git log --graph --pretty=oneline --abbrev-commit
-git reflog 
+
+**git reflog** 
+
 查看命令历史。
 
-git checkout -- file 
+**git checkout -- file**
+
 撤销工作区的修改，无论是修改还是删除文件。
 
-git reset 
+**git reset**
+
 1. 撤销暂存区的修改：
 
 ~$ git reset HEAD file
+
 2. 撤销本次提交（版本回退）：
 
 # 撤销至上一次提交
+
 ~$ git reset --hard HEAD^
+
 # 撤销至上两次提交
+
 ~$ git reset --hard HEAD^^
+
 # 撤销至上100次提交
+
 ~$ git reset --hard HEAD~100
+
 # 撤销至某一次提交，可以回退到未来
+
 ~$ git reset --hard commit_id
+
 分支管理
 
 git branch
 
 # 查看分支
+
 ~$ git branch 
+
 # 创建分支
+
 ~$ git branch <name> 
+
 # 删除分支
+
 ~$ git branch -d <name> 
+
 # 强行删除分支
+
 ~$ git branch -D <name>
+
 git checkout
 
 # 切换分支
+
 ~$ git checkout <name> 
+
 # 创建+切换分支
+
 ~$ git checkout -b <name> 
+
 # 在本地创建和远程分支对应的分支，本地和远程分支的名称最好一致
 ~$ git checkout -b branch-name origin/branch-name 
 # 建立本地分支和远程分支的关联
 ~$ git branch --set-upstream branch-name origin/branch-name
-git merge 
+
+**git merge** 
 Git 分支合并出现冲突时，必须首先解决冲突。解决冲突后，再提交，合并完成。
 
 # 合并某分支到当前分支
@@ -102,7 +134,8 @@ Git 分支合并出现冲突时，必须首先解决冲突。解决冲突后，�
 # 加上--no-ff参数就可以用普通模式合并，合并时生成一个新的commit.
 # 合并后的历史有分支，能看出来曾经做过合并
 ~$ git merge --no-ff -m "merge with no-ff" <name>
-git stash 
+
+**git stash** 
 用于正在期间，解决临时 bug 。 
 可以先使用git stash 将工作区保存起来，然后新建 bug 分支修复 bug，然后合并至 dev 分支，删除 bug 分支，回到以前的分支后，用git stash pop回到工作现场。
 
