@@ -215,3 +215,5 @@ git show
 
 # 查看标签信息
 ~$ git show <tagname>
+
+[git 常用命令总结](http://sunxiaoyang.github.io/2015/11/05/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
