@@ -1,6 +1,7 @@
-Git-常用命令总结
+#Git-常用命令总结
 
-GIT  Nov 5, 2015  sunxiaoyang avatar sunxiaoyang
+**GIT  Nov 5, 2015  sunxiaoyang avatar sunxiaoyang**
+
 接触 Git 有段时间了，一直想写一篇有关 Git 的学习文档但却无从写起。因为平时都仅简单地使用一些 Git 常用命令，也未深究其原理。
 
 最近看了一些有关 Git 的学习资源，推荐给大家 
@@ -24,11 +25,12 @@ git config
 ~$ git config --global color.ui true 
 
 # Git 别名
-~$ git config --global alias.co checkout 
+~$ git config --global alias.co checkout
 ~$ git config --global alias.ci commit
 ~$ git config --global alias.br branch
 ~$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-git int 
+
+git init 
 Git 仓库初始化。在工作区创建隐藏目录 .git，这是 Git 的版本库，其中重要的就是称为stage（或者叫index）的暂存区和当前分支。
 
 git add <file> 
