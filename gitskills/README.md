@@ -25,10 +25,10 @@ git config
 ~$ git config --global color.ui true 
 
 # Git 别名
-~$ git config --global alias.co checkout
-~$ git config --global alias.ci commit
-~$ git config --global alias.br branch
-~$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+* ~$ git config --global alias.co checkout
+* ~$ git config --global alias.ci commit
+* ~$ git config --global alias.br branch
+* ~$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 git init 
 Git 仓库初始化。在工作区创建隐藏目录 .git，这是 Git 的版本库，其中重要的就是称为stage（或者叫index）的暂存区和当前分支。
