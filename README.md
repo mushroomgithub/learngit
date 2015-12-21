@@ -244,54 +244,51 @@ Git的标签虽然是版本库的快照，但其实它就是指向某个commit�
 
 **创建新标签，默认为HEAD**
 
-`~$ glonta°本地库推送至远端。例如：
+`~$ git tag <name> `
 
-`~$ git push origin agter`
+**创建新标签，指向commit-id**
 
-`~$ git push -u origin master`
+`~$ git tag <name> commit—id `
 
-第一次推送时需劌定标签名，-m指定说明文字**
+**创建带有说明的标签，用-a指定标签名，-m指定说明文字**
 
-`~$ git tag -a v0.1 -m "的远程新的master分支，还会把本地的master分支 签 **
+`~$ git tag -a v0.1 -m "version 0.1 released" 3628164 `
+
+** 可以删除一个本地标签 **
 
 `~$ git tag -d <tagname> `
 
-**可以删除一个远程拉取时就可以简化命令。
+**可以删除一个远程标签。**
 
-###git pull 
-抓取远程ç¸¸先在版本库中打一个标签，这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取pu了打标签时刻的版本。将来无论什么时候，取git show <tagname>`
+`~$ git push origin :refs/tags/<tagname> `
+
+**可以推送一个本地标签**
+
+`~$ git push origin <tagname> `
+
+**可以推送全部未推送过的本地标签**
+
+`~$ git push origin --tags`
+
+###git show
+
+**查看标签信息**
+
+`~$ git show <tagname>`
 
 ##参考网址
 
-[Git 常用命令总结](h史版本取出来。所以，标签也是版本库的一ä快照。
-                        
-                        Git的标签虽然是版本库的快照，但其edium=toutiao.io&utm_source=toutiao.io)
+[Git 常用命令总结](http://sunxiaoyang.github.io/2015/11/05/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-[Git 超级简明手å¼所以，创建和删除标签都是瞬间完成的。
+[Git 超级简明手册](https://github.com/shendl1978/blog/wiki/Git%E8%B6%85%E7%BA%A7%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-BA%A7%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+[IOS开发中的GIT流程](http://www.jianshu.com/p/87e34894a9f9?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-[IOS开发中的GIT。例如：
+[使用Git和Github进行协同开发流程](http://livoras.com/post/28?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-`~$ git push origin agter`
+[Git常用命令和Git Flow梳理](http://jonyfang.com/blog/2015/11/12/git_command_and_git_branching_model/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-`~$ git push -u oro&gin master`
+[常用Git命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-第一次推送时需劌定标签名，-m指å说明文字**
-
-`~$ git tag -a v0.1 -m "的远程新的massrr分支，还会把本地的master分支 签 **
- 
- `~$ git tGiag -d <tagname> `
- 
- **可以删除一个远程拉取时就20¯以简化命令。
-
- ###git pull 
- 抓取远程ç¸¸先在o.本库中打一个标签，这样，就唯一确定了打æ签时刻的版本。将来无论什么时候，取pu了æa标签时刻的版本。将来无论什么时候，取giturce=toutiao.io)
-
- [25个Git进阶技巧](https://linux.cn/article-5418-weibo.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
- [Oh My Zsh插件篇:git](http://swiftcafe.utiao.io&utm_source=toutiao.io)
-
- [Git 超级简明手å¼æu»¥，创建和删除æM`H0`]
- `"`]]
-`
-`"`
+[25个Git进阶技巧](https://linux.cn/article-5418-weibo.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+[Oh My Zsh插件篇:git](http://swiftcafe.io/2015/11/29/omz-git/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
