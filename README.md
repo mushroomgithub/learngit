@@ -1,6 +1,6 @@
 #Git-常用命令总结
 
-**GIT  Nov 5, 2015  sunxiaoyang avatar sunxiaoyang**
+**GIT  Dec 21, 2015  mushroomgithub**
 
 接触 Git 有段时间了，一直想写一篇有关 Git 的学习文档但却无从写起。因为平时都仅简单地使用一些 Git 常用命令，也未深究其原理。
 
