@@ -446,4 +446,8 @@ These features allow to pause a branch development and switch to another one (_"
 [25个Git进阶技巧](https://linux.cn/article-5418-weibo.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 [Oh My Zsh插件篇:git](http://swiftcafe.io/2015/11/29/omz-git/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-[Git Book](http://git-scm.com/book/zh/v2?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+[Pro Git 2nd](http://git-scm.com/book/zh/v2?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+
+[Git Flow](http://blog.csdn.net/uxyheaven/article/details/50373076?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+
+[闯过这 54 关，点亮你的 Git 技能树](http://www.codingstyle.cn/topics/51?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
