@@ -1,6 +1,6 @@
 #Git-常用命令总结
 
-**GIT  Nov 5, 2015  sunxiaoyang avatar sunxiaoyang**
+**GIT  Dec 21, 2015  mushroomgithub**
 
 接触 Git 有段时间了，一直想写一篇有关 Git 的学习文档但却无从写起。因为平时都仅简单地使用一些 Git 常用命令，也未深究其原理。
 
@@ -244,54 +244,210 @@ Git的标签虽然是版本库的快照，但其实它就是指向某个commit�
 
 **创建新标签，默认为HEAD**
 
-`~$ glonta°本地库推送至远端。例如：
+`~$ git tag <name> `
 
-`~$ git push origin agter`
+**创建新标签，指向commit-id**
 
-`~$ git push -u origin master`
+`~$ git tag <name> commit—id `
 
-第一次推送时需劌定标签名，-m指定说明文字**
+**创建带有说明的标签，用-a指定标签名，-m指定说明文字**
 
-`~$ git tag -a v0.1 -m "的远程新的master分支，还会把本地的master分支 签 **
+`~$ git tag -a v0.1 -m "version 0.1 released" 3628164 `
+
+** 可以删除一个本地标签 **
 
 `~$ git tag -d <tagname> `
 
-**可以删除一个远程拉取时就可以简化命令。
+**可以删除一个远程标签。**
 
-###git pull 
-抓取远程ç¸¸先在版本库中打一个标签，这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取pu了打标签时刻的版本。将来无论什么时候，取git show <tagname>`
+`~$ git push origin :refs/tags/<tagname> `
+
+**可以推送一个本地标签**
+
+`~$ git push origin <tagname> `
+
+**可以推送全部未推送过的本地标签**
+
+`~$ git push origin --tags`
+
+###git show
+
+**查看标签信息**
+
+`~$ git show <tagname>`
+
+
+##Oh My Zsh Plugin:常用git alias
+
+| Alias                | Command                                                                                                                                   |
+|:---------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
+| g                    | git                                                                                                                                     |
+| ga                   | git add                                                                                                                                 |
+| gaa                  | git add --all                                                                                                                           |
+| gapa                 | git add --patch                                                                                                                         |
+| gb                   | git branch                                                                                                                              |
+| gba                  | git branch -a                                                                                                                           |
+| gbda                 | git branch --merged \| command grep -vE "^(\*\|\s*master\s*$)" \| command xargs -n 1 git branch -d                                      |
+| gbl                  | git blame -b -w                                                                                                                         |
+| gbnm                 | git branch --no-merged                                                                                                                  |
+| gbr                  | git branch --remote                                                                                                                     |
+| gbs                  | git bisect                                                                                                                              |
+| gbsb                 | git bisect bad                                                                                                                          |
+| gbsg                 | git bisect good                                                                                                                         |
+| gbsr                 | git bisect reset                                                                                                                        |
+| gbss                 | git bisect start                                                                                                                        |
+| gc                   | git commit -v                                                                                                                           |
+| gc!                  | git commit -v --amend                                                                                                                   |
+| gca                  | git commit -v -a
+| gcam                 | git commit -a -m                                                                                                                         |
+| gca!                 | git commit -v -a --amend                                                                                                                |
+| gcan!                | git commit -v -a -s --no-edit --amend                                                                                                   |
+| gcb                  | git checkout -b                                                                                                                         |
+| gcf                  | git config --list                                                                                                                       |
+| gcl                  | git clone --recursive                                                                                                                   |
+| gclean               | git reset --hard && git clean -dfx                                                                                                      |
+| gcm                  | git checkout master                                                                                                                     |
+| gcmsg                | git commit -m                                                                                                                           |
+| gco                  | git checkout                                                                                                                            |
+| gcount               | git shortlog -sn                                                                                                                        |
+| gcp                  | git cherry-pick                                                                                                                         |
+| gcs                  | git commit -S                                                                                                                           |
+| gd                   | git diff                                                                                                                                |
+| gdca                 | git diff --cached                                                                                                                       |
+| gdt                  | git diff-tree --no-commit-id --name-only -r                                                                                             |
+| gdw                  | git diff --word-diff                                                                                                                    |
+| gf                   | git fetch                                                                                                                               |
+| gfa                  | git fetch --all --prune                                                                                                                 |
+| gfo                  | git fetch origin                                                                                                                        |
+| gg                   | git gui citool                                                                                                                          |
+| gga                  | git gui citool --amend                                                                                                                  |
+| ggpull               | ggl                                                                                                                                     |
+| ggpur                | ggu                                                                                                                                     |
+| ggpush               | ggp                                                                                                                                     |
+| ggsup                | git branch --set-upstream-to = origin/$(current_branch)                                                                                 |
+| gignore              | git update-index --assume-unchanged                                                                                                     |
+| gignored             | git ls-files -v \| grep "^[[:lower:]]"                                                                                                  |
+| git-svn-dcommit-push | git svn dcommit && git push github master:svntrunk                                                                                      |
+| gk                   | \gitk --all --branches                                                                                                                  |
+| gke                  | \gitk --all $(git log -g --pretty = format:%h)                                                                                          |
+| gl                   | git pull                                                                                                                                |
+| glg                  | git log --stat --color                                                                                                                  |
+| glgg                 | git log --graph --color                                                                                                                 |
+| glgga                | git log --graph --decorate --all                                                                                                        |
+| glgm                 | git log --graph --max-count = 10                                                                                                        |
+| glgp                 | git log --stat --color -p                                                                                                               |
+| glo                  | git log --oneline --decorate --color                                                                                                    |
+| glog                 | git log --oneline --decorate --color --graph                                                                                            |
+| glol                 | git log --graph --pretty = format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit       |
+| glola                | git log --graph --pretty = format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all |
+| glp                  | _git_log_prettily                                                                                                                       |
+| gm                   | git merge                                                                                                                               |
+| gmom                 | git merge origin/master                                                                                                                 |
+| gmt                  | git mergetool --no-prompt                                                                                                               |
+| gmtvim               | git mergetool --no-prompt --tool = vimdiff                                                                                              |
+| gmum                 | git merge upstream/master                                                                                                               |
+| gp                   | git push                                                                                                                                |
+| gpd                  | git push --dry-run                                                                                                                      |
+| gpoat                | git push origin --all && git push origin --tags                                                                                         |
+| gpu                  | git push upstream                                                                                                                       |
+| gpv                  | git push -v                                                                                                                             |
+| gr                   | git remote                                                                                                                              |
+| gra                  | git remote add                                                                                                                          |
+| grb                  | git rebase                                                                                                                              |
+| grba                 | git rebase --abort                                                                                                                      |
+| grbc                 | git rebase --continue                                                                                                                   |
+| grbi                 | git rebase -i                                                                                                                           |
+| grbm                 | git rebase master                                                                                                                       |
+| grbs                 | git rebase --skip                                                                                                                       |
+| grh                  | git reset HEAD                                                                                                                          |
+| grhh                 | git reset HEAD --hard                                                                                                                   |
+| grmv                 | git remote rename                                                                                                                       |
+| grrm                 | git remote remove                                                                                                                       |
+| grset                | git remote set-url                                                                                                                      |
+| grt                  | cd $(git rev-parse --show-toplevel \|\| echo ".")                                                                                       |
+| gru                  | git reset --                                                                                                                            |
+| grup                 | git remote update                                                                                                                       |
+| grv                  | git remote -v                                                                                                                           |
+| gsb                  | git status -sb                                                                                                                          |
+| gsd                  | git svn dcommit                                                                                                                         |
+| gsi                  | git submodule init                                                                                                                      |
+| gsps                 | git show --pretty = short --show-signature                                                                                              |
+| gsr                  | git svn rebase                                                                                                                          |
+| gss                  | git status -s                                                                                                                           |
+| gst                  | git status                                                                                                                              |
+| gsta                 | git stash                                                                                                                               |
+| gstaa                | git stash apply                                                                                                                         |
+| gstd                 | git stash drop                                                                                                                          |
+| gstl                 | git stash list                                                                                                                          |
+| gstp                 | git stash pop                                                                                                                           |
+| gsts                 | git stash show --text                                                                                                                   |
+| gsu                  | git submodule update                                                                                                                    |
+| gts                  | git tag -s                                                                                                                              |
+| gunignore            | git update-index --no-assume-unchanged                                                                                                  |
+| gunwip               | git log -n 1 \| grep -q -c "\-\-wip\-\-" && git reset HEAD~1                                                                            |
+| gup                  | git pull --rebase                                                                                                                       |
+| gupv                 | git pull --rebase -v                                                                                                                    |
+| gvt                  | git verify-tag                                                                                                                          |
+| gwch                 | git whatchanged -p --abbrev-commit --pretty = medium                                                                                    |
+| gwip                 | git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"                                                      |
+
+## Deprecated Aliases
+
+These are aliases that have been removed, renamed, or otherwise modified in a way that may, or may not, receive further support.
+
+| Alias  |                                Command                                             |                                             Modification                                            |
+| :----- | :----------------------------------------------------------------------------------| --------------------------------------------------------------------------------------------------- |
+| gap    | git add --patch                                                                    | new alias `gapa`                                                                                    |
+| gcl    | git config --list                                                                  | new alias `gcf`                                                                                     |
+| gdc    | git diff --cached                                                                  | new alias `gdca`                                                                                    |
+| gdt    | git difftool                                                                       | no replacement                                                                                      |
+| ggpull | git pull origin $(current_branch)                                                  | new alias `ggl` (`ggpull` still exists for now though)                                              |
+| ggpur  | git pull --rebase origin $(current_branch)                                         | new alias `ggu` (`ggpur` still exists for now though)                                               |
+| ggpush | git push origin $(current_branch)                                                  | new alias `ggp` (`ggpush` still exists for now though)                                              |
+| gk     | gitk --all --branches                                                              | now aliased to `\gitk --all --branches`                                                             |
+| glg    | git log --stat --max-count = 10                                                    | now aliased to `git log --stat --color`                                                             |
+| glgg   | git log --graph --max-count = 10                                                   | now aliased to `git log --graph --color`                                                            |
+| gwc    | git whatchanged -p --abbrev-commit --pretty = medium                               | new alias `gwch`                                                                                    |
+| gwip   | git add -A; git ls-files --deleted -z \| xargs -r0 git rm; git commit -m "--wip--" | now aliased to `git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"` |
+
+## Functions
+
+### Current
+
+| Command            | Description                             |
+|:-------------------|:----------------------------------------|
+| current_branch     | Return the name of the current branch   |
+| current_repository | Return the names of the current remotes |
+
+### WiP
+
+These features allow to pause a branch development and switch to another one (_"Work in Progress"_,  or wip). When you want to go back to work, just unwip it.
+
+| Command          | Description                                     |
+|:-----------------|:------------------------------------------------|
+| work_in_progress | Echoes a warning if the current branch is a wip |
+| gwip             | Commit wip branch                               |
+| gunwip           | Uncommit wip branch                             |
 
 ##参考网址
 
-[Git 常用命令总结](h史版本取出来。所以，标签也是版本库的一ä快照。
-                        
-                        Git的标签虽然是版本库的快照，但其edium=toutiao.io&utm_source=toutiao.io)
+[Git 常用命令总结](http://sunxiaoyang.github.io/2015/11/05/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-[Git 超级简明手å¼所以，创建和删除标签都是瞬间完成的。
+[Git 超级简明手册](https://github.com/shendl1978/blog/wiki/Git%E8%B6%85%E7%BA%A7%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-BA%A7%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+[IOS开发中的GIT流程](http://www.jianshu.com/p/87e34894a9f9?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-[IOS开发中的GIT。例如：
+[使用Git和Github进行协同开发流程](http://livoras.com/post/28?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-`~$ git push origin agter`
+[Git常用命令和Git Flow梳理](http://jonyfang.com/blog/2015/11/12/git_command_and_git_branching_model/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-`~$ git push -u oro&gin master`
+[常用Git命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-第一次推送时需劌定标签名，-m指å说明文字**
+[25个Git进阶技巧](https://linux.cn/article-5418-weibo.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+[Oh My Zsh插件篇:git](http://swiftcafe.io/2015/11/29/omz-git/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
-`~$ git tag -a v0.1 -m "的远程新的massrr分支，还会把本地的master分支 签 **
- 
- `~$ git tGiag -d <tagname> `
- 
- **可以删除一个远程拉取时就20¯以简化命令。
+[Pro Git 2nd](http://git-scm.com/book/zh/v2?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
- ###git pull 
- 抓取远程ç¸¸先在o.本库中打一个标签，这样，就唯一确定了打æ签时刻的版本。将来无论什么时候，取pu了æa标签时刻的版本。将来无论什么时候，取giturce=toutiao.io)
+[Git Flow](http://blog.csdn.net/uxyheaven/article/details/50373076?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
- [25个Git进阶技巧](https://linux.cn/article-5418-weibo.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
- [Oh My Zsh插件篇:git](http://swiftcafe.utiao.io&utm_source=toutiao.io)
-
- [Git 超级简明手å¼æu»¥，创建和删除æM`H0`]
- `"`]]
-`
-`"`
+[闯过这 54 关，点亮你的 Git 技能树](http://www.codingstyle.cn/topics/51?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
