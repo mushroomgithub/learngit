@@ -125,8 +125,10 @@ git branch
 `~$ git branch -D <name>`
 
 **删除远程分支**
+
 `git push origin :<name>`
 `git branch -d <local branch name>`
+
 ###git checkout
 
 **切换分支**
@@ -146,7 +148,9 @@ git branch
 `~$ git branch --set-upstream branch-name origin/branch-name`
 
 **在当前分支下建立与远程同样分支名的上游关系，比如dev**
+
 `git push origin dev:dev`
+
 **git merge** 
 
 Git 分支合并出现冲突时，必须首先解决冲突。解决冲突后，再提交，合并完成。
