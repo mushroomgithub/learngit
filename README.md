@@ -152,6 +152,10 @@ git branch
 
 `git push origin dev:dev`
 
+或者：
+
+`git push --set-upstream origin developer`
+
 **git merge** 
 
 Git 分支合并出现冲突时，必须首先解决冲突。解决冲突后，再提交，合并完成。
