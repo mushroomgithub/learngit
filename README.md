@@ -60,15 +60,19 @@ Git 仓库初始化。在工作区创建隐藏目录 .git，这是 Git 的版本
 
 查看修改内容，显示的格式是Unix通用的diff格式。
 
+**git diff拓展**
+
 查看工作区更改内容
-$ git diff index.txt
+
+`$ git diff index.txt`
+
 ## diff 命令查看到的是工作区内文件和缓存区文件的区别
 ## 如果index.txt 已经通过add命令添加的缓存区，则无法查看
 ## 如果查看工作区和版本库的区别，可以使用参数 HEAD 或指定版本号
 
-$ git diff HEAD -- index.txt
+`$ git diff HEAD -- index.txt`
 
-$ git diff 287d9bd-- index.txt
+`$ git diff 287d9bd-- index.txt`
 
 ##git log
 
