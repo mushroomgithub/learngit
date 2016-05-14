@@ -56,8 +56,12 @@ Git 仓库初始化。在工作区创建隐藏目录 .git，这是 Git 的版本
 
 查看工作区状态。
 
-**git rm 文件删除与找回**
-$ git rm index.txt
+**git rm**
+
+文件删除与找回
+
+`$ git rm index.txt`
+
 + 该命令执行后，工作区内文件直接删除，操作指令放到缓存区
 + 若执行commit，则版本库中文件被删除
 + 若想取消删除，则需要先执行reset HEAD命令，再执行checkout命令找回
@@ -67,7 +71,7 @@ $ git rm index.txt
 
 查看修改内容，显示的格式是Unix通用的diff格式。
 
-**git diff拓展**
+**git diff 拓展**
 
 查看工作区更改内容
 
@@ -102,13 +106,15 @@ $ git rm index.txt
 
 撤销工作区的修改，无论是修改还是删除文件。
 
-**git checkout 废弃工作区修改**
+**git checkout**
+
+废弃工作区修改
 
 `$ git checkout -- index.txt`
 
 **这个命令会把你工作区中的修改回退到最后一次add命令之前的状态**
 
-+ 即如果缓存区有内容，则回退到和缓存区一直
++ 即如果缓存区有内容，则回退到和缓存区一致
 + 如果缓存区为空，则回退到和版本库一致
 
 **git reset**
