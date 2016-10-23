@@ -482,6 +482,7 @@ These features allow to pause a branch development and switch to another one (_"
 [IOS开发中的GIT流程](http://www.jianshu.com/p/87e34894a9f9?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
 [使用Git和Github进行协同开发流程](http://livoras.com/post/28?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+[Git Command Cheat Sheet](http://woshijpf.github.io/2016/10/17/Git-Command/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
 [Git常用命令和Git Flow梳理](http://jonyfang.com/blog/2015/11/12/git_command_and_git_branching_model/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
