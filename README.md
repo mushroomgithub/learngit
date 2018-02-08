@@ -157,9 +157,6 @@ git branch
 **删除远程分支**
 
 `git push origin :<name>`
-
-`git branch -d <local branch name>`
-
 ###git checkout
 
 **切换分支**
